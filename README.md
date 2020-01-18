@@ -6,7 +6,7 @@ MySQL storage for OAuth 2.0  Provides both client and token store.
 ## Install
 
 ``` bash
-$ go get -u -v gopkg.in/go-oauth2/mysql.v3
+$ go get -u -v github.com/vnzernov/go-oauth2-mysql
 ```
 
 ## Usage
