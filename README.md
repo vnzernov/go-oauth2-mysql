@@ -15,7 +15,7 @@ $ go get -u -v gopkg.in/go-oauth2/mysql.v3
 package main
 
 import (
-	"gopkg.in/go-oauth2/mysql.v3"
+	"github.com/vnzernov/go-oauth2-mysql"
 	"gopkg.in/oauth2.v3/manage"
 
 	_ "github.com/go-sql-driver/mysql"
