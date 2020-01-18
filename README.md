@@ -37,7 +37,7 @@ func main() {
 
 	defer clientStore.Close()
 
-	clientStore.Set("000000", &models.Client{
+	clientStore.Set(&models.Client{
 		ID:     "000000",
 		Secret: "999999",
 		Domain: "http://localhost",
