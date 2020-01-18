@@ -63,6 +63,8 @@ Copyright (c) 2020
 [Build-Status-Image]: https://travis-ci.org/vnzernov/go-oauth2-mysql.svg?branch=master
 [codecov-url]: https://codecov.io/gh/vnzernov/go-oauth2-mysql
 [codecov-image]: https://codecov.io/gh/vnzernov/go-oauth2-mysql/branch/master/graph/badge.svg
+[reportcard-url]: https://goreportcard.com/report/github.com/vnzernov/go-oauth2-mysql
+[reportcard-image]: https://goreportcard.com/badge/github.com/vnzernov/go-oauth2-mysql
 [godoc-url]: https://godoc.org/github.com/vnzernov/go-oauth2-mysql
 [godoc-image]: https://godoc.org/github.com/vnzernov/go-oauth2-mysql?status.svg
 [license-url]: http://opensource.org/licenses/MIT
