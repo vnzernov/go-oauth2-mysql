@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	dsn = "root:secret@tcp(172.17.0.3:3306)/yamalhe?charset=utf8"
+	dsn = "root:123456@tcp(localhost:3306)/myapp_test?charset=utf8"
 )
 
 func TestTokenStore(t *testing.T) {
