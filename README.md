@@ -3,6 +3,53 @@ MySQL storage for OAuth 2.0  Provides both client and token store.
 
 [![License][license-image]][license-url]
 
+## Install
+
+``` bash
+$ go get -u -v gopkg.in/go-oauth2/mysql.v3
+```
+
+## Usage
+
+``` go
+package main
+
+import (
+	"gopkg.in/go-oauth2/mysql.v3"
+	"gopkg.in/oauth2.v3/manage"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
+func main() {
+	manager := manage.NewDefaultManager()
+	dsn := "root:123456@tcp(127.0.0.1:3306)/myapp_test?charset=utf8"
+	// use mysql token store
+	store := mysql.NewDefaultStore(
+		mysql.NewConfig(dsn),
+	)
+
+	defer store.Close()
+	// use mysql client store
+	clientStore := mysql.NewClientDefaultStore(
+		mysql.NewConfig(dsn),
+	)
+
+	defer clientStore.Close()
+
+	clientStore.Set("000000", &models.Client{
+		ID:     "000000",
+		Secret: "999999",
+		Domain: "http://localhost",
+	})
+
+	manager.MapTokenStorage(store)
+	manager.MapClientStorage(clientStore)
+
+// ...
+}
+
+```
 Credits
 
 Based on https://github.com/go-oauth2/mysql/
