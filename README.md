@@ -1,7 +1,7 @@
 # go-oauth2-mysql
 MySQL storage for OAuth 2.0  Provides both client and token store.
 
-[![Build][Build-Status-Image]][Build-Status-Url] [![License][license-image]][license-url]
+[![Build][Build-Status-Image]][Build-Status-Url] [![Codecov][codecov-image]][codecov-url] [![License][license-image]][license-url]
 
 ## Install
 
@@ -61,5 +61,7 @@ Copyright (c) 2020
 ```
 [Build-Status-Url]: https://travis-ci.org/vnzernov/go-oauth2-mysql
 [Build-Status-Image]: https://travis-ci.org/vnzernov/go-oauth2-mysql.svg?branch=master
+[codecov-url]: https://codecov.io/vnzernov/go-oauth2-mysql
+[codecov-image]: https://codecov.io/vnzernov/go-oauth2-mysql.svg?branch=master
 [license-url]: http://opensource.org/licenses/MIT
 [license-image]: https://img.shields.io/npm/l/express.svg
