@@ -56,9 +56,6 @@ Based on https://github.com/go-oauth2/mysql/
 
 ## MIT License
 
-```
-Copyright (c) 2020
-```
 [Build-Status-Url]: https://travis-ci.org/vnzernov/go-oauth2-mysql
 [Build-Status-Image]: https://travis-ci.org/vnzernov/go-oauth2-mysql.svg?branch=master
 [codecov-url]: https://codecov.io/gh/vnzernov/go-oauth2-mysql
