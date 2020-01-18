@@ -3,16 +3,13 @@ package mysql
 import (
 	"database/sql"
 	"fmt"
-	"io"
-	"os"
-	"time"
-
 	jsoniter "github.com/json-iterator/go"
 	"gopkg.in/gorp.v2"
 	"gopkg.in/oauth2.v3"
-
-	// "gopkg.in/oauth2.v3"
 	"gopkg.in/oauth2.v3/models"
+	"io"
+	"os"
+	"time"
 )
 
 // ClientStoreItem data item
@@ -65,13 +62,10 @@ func NewClientStoreWithDB(db *sql.DB, tableName string, gcInterval int) *ClientS
 	clientStore.ticker = time.NewTicker(time.Second * time.Duration(interval))
 
 	clientStore.db.AddTableWithName(ClientStoreItem{}, clientStore.tableName)
-	//table.AddIndex("idx_id", "Btree", []string{"id"})
-
 	err := clientStore.db.CreateTablesIfNotExists()
 	if err != nil {
 		panic(err)
 	}
-	//clientStore.db.CreateIndex()
 	return clientStore
 }
 
@@ -121,7 +115,7 @@ func (s *ClientStore) Create(info oauth2.ClientInfo) error {
 	return nil
 }
 
-// Create creates and stores the new client information
+// Delete creates and stores the new client information
 func (s *ClientStore) Delete(id string) error {
 	_, err := s.db.Delete(&ClientStoreItem{ID: id})
 	if err != nil {

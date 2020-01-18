@@ -8,10 +8,6 @@ import (
 	"gopkg.in/oauth2.v3/models"
 )
 
-const (
-//dsn = "root:secret@tcp(172.17.0.3:3306)/yamalhe?charset=utf8"
-)
-
 func TestClientStore(t *testing.T) {
 	Convey("Test mysql client store", t, func() {
 		clientStore := NewClientDefaultStore(NewConfig(dsn))
@@ -39,4 +35,3 @@ func TestClientStore(t *testing.T) {
 		})
 	})
 }
-
