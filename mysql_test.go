@@ -1,19 +1,26 @@
 package mysql
 
 import (
+	"os"
+	"testing"
+	"time"
+
 	_ "github.com/go-sql-driver/mysql"
 	. "github.com/smartystreets/goconvey/convey"
 	"gopkg.in/oauth2.v3/models"
-	"testing"
-	"time"
 )
 
-const (
-	dsn = "root@tcp(localhost:3306)/myapp_test?charset=utf8"
-)
+var dsn = "root@tcp(localhost:3306)/myapp_test?charset=utf8"
 
 func TestTokenStore(t *testing.T) {
 	Convey("Test mysql token store", t, func() {
+		Convey("Test error connect", func() {
+			So(func() { NewClientDefaultStore(NewConfig("")) }, ShouldPanic)
+		})
+		envDsn, ok := os.LookupEnv("MYSQL_DSN")
+		if ok {
+			dsn = envDsn
+		}
 		store := NewDefaultStore(NewConfig(dsn))
 		defer store.clean()
 

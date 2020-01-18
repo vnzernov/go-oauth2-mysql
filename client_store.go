@@ -84,9 +84,9 @@ func (s *ClientStore) SetStdout(stdout io.Writer) *ClientStore {
 }
 
 // Close close the store
-func (s *ClientStore) Close() {
+func (s *ClientStore) Close() error {
 	s.ticker.Stop()
-	s.db.Db.Close()
+	return s.db.Db.Close()
 }
 
 func (s *ClientStore) errorf(format string, args ...interface{}) {
